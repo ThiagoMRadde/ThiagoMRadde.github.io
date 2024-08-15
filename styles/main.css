@@ -1,0 +1,110 @@
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.group {
+    margin-bottom: 20px;
+}
+
+.group-header {
+    padding: 15px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    position: relative;
+}
+
+.group-header::after {
+    content: '▶';
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s;
+}
+
+.group-header.active::after {
+    content: '▼';
+}
+
+.group-header:hover {
+    background-color: #444;
+    transform: scale(1.05);
+}
+
+.group-content {
+    display: none;
+    padding: 10px;
+    background-color: #262626;
+    border-radius: 5px;
+}
+
+.file-input {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.file-input input[type="file"] {
+    display: none; /* Oculta o input padrão */
+}
+
+.file-input label, .file-input-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #555;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+
+.file-input label:hover, .file-input-btn:hover {
+    background-color: #777;
+}
+
+.file-input-btn {
+    background-color: #333; /* Cor de fundo para o botão */
+    text-decoration: none; /* Remove o sublinhado */
+}
+
+/* Adaptando para dispositivos móveis */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    .group-header {
+        padding: 10px;
+        font-size: 1em;
+    }
+
+    .file-input label, .file-input-btn {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+}
